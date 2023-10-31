@@ -50,6 +50,10 @@ public class ChessMatch {
 		if (!board.thereIsAPiece(position)) {
 			throw new ChessException("There is no piece on source position");
 		}
+		/*se não tiver nenhuma posição possivel eu lanço uma exceção*/
+		if (!board.piece(position).isThereAnyPossibleMove()) {
+			throw new ChessException("There is no possible moves for the chosen piece");
+		}
 	}
 		
 	/*metodo que recebe as cordenadas do xadrez*/
