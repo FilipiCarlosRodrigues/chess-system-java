@@ -26,10 +26,12 @@ public class Program {
 			System.out.print("Source: ");
 			ChessPosition source = UI.readChessPosition(sc);
 			
+			boolean[][] possivleMoves = chessMatch.possibleMoves(source);
+			UI.clearScreen();
+			UI.printBoard(chessMatch.getPieces(), possivleMoves);
 			System.out.println();
 			System.out.print("Target: ");
 			ChessPosition target = UI.readChessPosition(sc);
-			
 			ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
 			}
 			catch(ChessException e) {
