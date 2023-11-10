@@ -20,7 +20,7 @@ public class Program {
 		List<ChessPiece> captured = new ArrayList<>();
 	
 	
-	while(true) {
+	while(!chessMatch.getCheckMate()) {
 		/*UI serve para imprimir as peças da partidas uma função para isso*/
 		try {
 			UI.clearScreen();
@@ -50,8 +50,10 @@ public class Program {
 		catch(InputMismatchException e) {
 			System.out.println(e.getMessage());
 			sc.nextLine();
+			}
 		}
-		}
+		UI.clearScreen();
+		UI.printMatch(chessMatch, captured);
 	}
 
 } 
